@@ -24,6 +24,7 @@ class BucketHome(View):
         objects = tasks.all_bucket_objects_task()
         return render(request , self.template_name , {'objects':objects})
 
+
 class DeleteBucketObject(View):
     def get(self , request , key):
         tasks.delete_object_task.delay(key)
